@@ -1,3 +1,9 @@
+"""
+Filename: Models
+
+This function is the model of the system of how it will be formatted
+"""
+
 from django.contrib.auth.models import User
 from django.db import models
 
