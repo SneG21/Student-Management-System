@@ -1,3 +1,10 @@
+"""
+Function: Forms
+
+This function is to register students to the system
+
+"""
+
 from django import forms
 from .models import Student
 from django.contrib.auth.models import User
