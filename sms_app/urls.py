@@ -1,3 +1,10 @@
+"""
+Filename: URL
+
+This function is to direct the prioper urls to the views
+"""
+
+
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
