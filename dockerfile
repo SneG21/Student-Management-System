@@ -1,20 +1,20 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11
+# Use Python base image
+FROM python:3.9
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /sms_app
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . .
+# Copy dependencies
+COPY requirements.txt /sms_app/
 
-# Install any needed packages specified in requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 8000 available to the world outside this container
+# Copy project files
+COPY . /sms_app/
+
+# Expose the port
 EXPOSE 8000
 
-# Define environment variable
-ENV DJANGO_ENV=production
-
-# Run the Django app
+# Run Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
