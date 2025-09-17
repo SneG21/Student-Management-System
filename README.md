@@ -39,7 +39,7 @@
 
 - Ensure that secrets (e.g., passwords, access tokens) are not committed to the repository.
 - Add them to a `.env` file or environment variables, depending on your deployment strategy.
-=======
+
 # Django Capstone Project
 
 ## Setup
@@ -66,4 +66,4 @@ To build the Docker container, follow the steps in the Dockerfile.
 
 ## Conclusion
 By following these steps, you’ll have a well-structured Django project with login functionality, user registration, proper documentation, and a Git setup that adheres to best practices.
->>>>>>> 8c03de51721c0726d9adcbd5e76266a815ef1559
+8c03de51721c0726d9adcbd5e76266a815ef1559
