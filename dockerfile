@@ -4,6 +4,7 @@ FROM python:3.11-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SECRET_KEY=django-insecure-mysecurekey123
 
 # Set working directory
 WORKDIR /sms_app
@@ -19,4 +20,4 @@ COPY . /sms_app/
 # RUN python manage.py collectstatic --noinput
 
 # Run server
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
