@@ -2,16 +2,19 @@
    sphinx-quickstart on Sun Oct 20 22:44:46 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-Student Management System documentation
-=======================================
-
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+   
+Welcome to Student Management System's documentation
+====================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   modules
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
