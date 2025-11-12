@@ -123,3 +123,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login/'
 
+import os
+from decouple import config
+
+SECRET_KEY = config("DJANGO_SECRET_KEY", default="django-insecure-mysecurekey123")
