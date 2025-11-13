@@ -30,39 +30,22 @@ def add(request):
     """
     Add a new student to the system. If the request is POST and the form is valid,
     saves the student data to the database.
-
-    :param request: The HTTP request object.
-    :return: Rendered form for adding a student with optional success message.
     """
     if request.method == 'POST':
         form = StudentForm(request.POST)
         if form.is_valid():
-            new_student_num =form.cleaned_data['student_num']
-            new_name = form.cleaned_data['name']
-            new_surname = form.cleaned_data['surname']
-            new_email = form.cleaned_data['email_address']
-            new_field_of_study = form.cleaned_data['field_of_study']
-            new_ap_score = form.cleaned_data['ap_score']
-
-            new_student = Student(
-                student_num = new_student_num,
-                name = new_name,
-                surname = new_surname,
-                email_address = new_email,
-                field_of_study = new_field_of_study,
-                ap_score = new_ap_score
-            )
-
-            new_student.save()
+            new_student = form.save()
             return render(request, 'sms_app/add.html', {
                 'form': StudentForm(),
                 'success': True
             })
+        else:
+            # Return the form with validation errors displayed
+            return render(request, 'sms_app/add.html', {'form': form})
     else:
         form = StudentForm()
-        return render(request, 'sms_app/add.html', {
-            'form': StudentForm()
-        })
+
+    return render(request, 'sms_app/add.html', {'form': form})
     
 
 def register(request):
@@ -149,7 +132,8 @@ def edit(request, id):
     else:
          student = get_object_or_404(Student, pk=id)
          form = StudentForm(instance=student)
-    return render("index")     
+
+    return render(request, "sms_app/edit.html", {"form": form})     
 
 def delete(request, id):
     """
