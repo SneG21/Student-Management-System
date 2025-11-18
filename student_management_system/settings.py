@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = "django-insecure-mysecurekey123S"
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -123,7 +124,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login/'
 
-import os
-from decouple import config
+# import os
 
-SECRET_KEY = config("DJANGO_SECRET_KEY", default="django-insecure-mysecurekey123")
+# SECRET_KEY = os.environ["SECRET_KEY"]

@@ -5,8 +5,8 @@ import sys
 import django
 
 # -- Path setup --------------------------------------------------------------
-sys.path.insert(0, os.path.abspath("../.."))  # Two levels up (so it finds manage.py)
-os.environ["DJANGO_SETTINGS_MODULE"] = "student_management_system.settings"
+sys.path.insert(0, os.path.abspath(".."))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "student_management_system.settings")
 django.setup()
 
 # -- Project information -----------------------------------------------------
